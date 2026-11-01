@@ -20,7 +20,7 @@
       const quantity = bag.filter((item) => item === size).length;
       if (!quantity) return;
       const item = document.createElement("li");
-      item.textContent = `White T-shirt · Size ${size} · Quantity ${quantity}`;
+      item.textContent = `TENSILE Heavyweight Tee · Size ${size} · Quantity ${quantity}`;
       bagItems.append(item);
     });
   };
@@ -41,7 +41,7 @@
     bag.push(selected.value);
     renderBag();
     const itemWord = bag.length === 1 ? "item" : "items";
-    bagStatus.textContent = `Added a white T-shirt in size ${selected.value}. Your demo bag has ${bag.length} ${itemWord}.`;
+    bagStatus.textContent = `Added a TENSILE Heavyweight Tee in size ${selected.value}. Your demo bag has ${bag.length} ${itemWord}.`;
   });
 
   form.addEventListener("change", () => {
