@@ -119,3 +119,26 @@
 - **Review Issue:** [GitHub Issue #2](https://github.com/mpincay619/is117-brand-studio/issues/2)
 - **Question / Critique Recorded:** How will shoppers verify that simulated checkout orders actually save to a real SQLite backend rather than disappearing on refresh, and how are collar/shrinkage specs kept honest?
 - **Decision & Action:** Implemented `node:sqlite` (`data/orders.sqlite`) in `server.mjs` connected to `public/shop.js`, and carried forward explicit hypothetical labels in `SPEC.md` and `public/index.html`.
+
+---
+
+# Portfolio Plan
+
+## 1. Target Reader, Goal & Evidence
+- **Target Reader:** Technical recruiters, hiring managers, and senior UX/design engineering leads at companies like Fidelity and Audible.
+- **Primary Goal:** Demonstrate end-to-end capability in translating UX research into accessible, responsive web code with rigorous version control and accessibility checks.
+- **Evidence Provided:** Published documentation site (`is117-brand-studio`), verified employer role research (`career-research.html`), live GitHub repositories, and interactive design prototypes.
+
+## 2. Two Page Approaches Compared
+- **Approach A — Comprehensive Single-Page Architectural Portfolio (Selected):** A clean, modular multi-page documentation site (`index.html`, `styleguide.html`, `studio.html`, `career-research.html`) with clear semantic nav and embedded project cards.
+- **Approach B — Minimalist Static Link-Tree Resume:** A single landing page with outbound PDF links. (Rejected because it fails to showcase interactive coding, accessibility styling, and git version control discipline required by Audible/Fidelity).
+
+## 3. Three to Five Checkable User Stories
+1. **Story 1 (Navigation & Discovery):** As a recruiter, I want to click from the storefront to the Career Research page in one step so I can verify employer alignment instantly. (Checked via top navbar links across all pages).
+2. **Story 2 (Responsive Viewport Adaptation):** As a hiring manager inspecting on mobile or desktop, I want cards and text to scale cleanly without horizontal overflow. (Checked via CSS media queries and responsive layout validation).
+3. **Story 3 (Accessibility & Contrast):** As an accessibility auditor, I want high-contrast text and explicit keyboard focus states on all interactive links. (Checked via Lighthouse accessibility audits and keyboard tab tests).
+
+## 4. Professional Profile & Artifact Plan
+- **LinkedIn Profile:** Updated with current B.S. in Human-Computer Interaction studies at NJIT, design ambassador leadership, and project documentation links.
+- **GitHub Profiles & Repositories:** Maintained under `mpincay619` across three public repos (`is117-brand-studio`, `is117-group-business`, and personal portfolio).
+- **Résumé:** Professional PDF detailing UX design coursework, responsive web prototyping, Git workflows, and UI component structuring.
