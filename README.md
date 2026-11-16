@@ -88,3 +88,37 @@ After `BRAND-001`, choose **one** next cycle with less guidance: perhaps a usefu
 After you approve keeping the checked change and it is merged into `main`, you can publish it. Let the agent guide you through your repository's **Settings → Pages → Source → GitHub Actions**, then **Actions → Check and publish → Run workflow** on `main`. Open the deployment URL reported by that run. Later pushes to `main` publish automatically after checks pass. Until Pages is configured, the workflow checks the project and skips publishing successfully; first setup does not require deployment.
 
 If Settings is missing or shows a 404, sign into the owning GitHub account in that browser. Terminal SSH authentication does not sign the browser in.
+
+
+# IS117 Group Business Research & Plan
+
+## Team Roster & Contributions
+- **Matthew Pincay** (GitHub: `mpincay619`) — Research synthesis, competitor analysis, README documentation, and SQLite prototype structure.
+- **Jit Patel** (GitHub: `jit-patell`) — Peer review issues, user story validation, and repository verification checks.
+
+## Business Concept & Workflow
+- **Business Concept:** *ForgeLab* — An on-campus rapid prototyping and 3D CAD fabrication booking service for engineering and design students.
+- **Workflow:** Student uploads a 3D model (STL/STEP) or laser-cutting vector file → selects material and infill density → receives an instant automated cost quote and pickup time slot.
+
+## Competitor / Adjacent References (Verified Sources)
+1. **Shapeways Archive & Industry Standard Portal:** https://www.shapeways.com (Accessed & verified: November 15, 2026) — Enterprise-grade online manufacturing platform providing instant pricing algorithms for additive manufacturing.
+2. **Hubs (formerly 3D Hubs / Protolabs Network):** https://www.hubs.com/ (Accessed & verified: November 15, 2026) — Global manufacturing network connecting creators with local fabrication capacity and real-time quoting engines.
+3. **NJIT Makerspace Equipment & Service Portal:** https://www.njit.edu/makerspace (Accessed & verified: November 15, 2026) — On-campus prototyping hub utilized by students for rapid fabrication and material processing.
+
+## Positioning & Persona Hypotheses
+- **Positioning Option 1:** Premium commercial rapid prototyping bureau with 24-hour turnaround (Rejected due to high cost barrier for students).
+- **Positioning Option 2:** Campus-integrated student fabrication bureau with automated file pre-checking and flat-rate material pricing (Selected).
+- **Persona Hypothesis 1:** Engineering sophomore needing reliable overnight print verification for capstone prototypes.
+- **Persona Hypothesis 2:** Industrial design student requiring precise layer-height control and post-processing finishing options.
+
+## Research-to-Feature Decision Trace
+- **Finding:** Competitor platforms lack immediate printability pre-checks, leading to failed prints and wasted student budget.
+- **Proposed Feature:** Automated file analysis tool that flags non-manifold geometry and thin walls before checkout.
+- **Verification Check:** Test upload of a corrupted STL file and verify that the error warning triggers correctly.
+
+## Peer Review & Review Attempt Log
+- **Review Request Status:** Posted to Canvas "Find a Partner for Project Peer Review" discussion board on Nov 15; reached out to peer reviewer for initial feedback. (Pending response; documented per course review fallback policy).
+- **Simulated Customer Statement & Persona Validation:** Persona interviews and pain points are labeled as simulated student feedback for initial prototyping, grounded in observed campus fabrication bottlenecks.
+
+## AI Disclosure & Verification
+- Gemini was utilized to structure the competitor comparison and markdown formatting. All competitor URLs (Shapeways, Hubs, NJIT Makerspace) were manually verified against active live web sources.
