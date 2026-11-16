@@ -25,7 +25,19 @@
     });
   };
 
-  form.addEventListener("submit", (event) => {
+  // Load any previously persisted SQLite orders when running on local Node server
+  fetch("/api/orders")
+    .then((res) => (res.ok ? res.json() : null))
+    .then((data) => {
+      if (!data?.orders?.length) return;
+      const latest = data.orders[0];
+      bagStatus.textContent = `SQLite order history loaded (${data.orders.length} saved). Latest: #${latest.id} — Size ${latest.size} ($${latest.total_usd} USD).`;
+    })
+    .catch(() => {
+      // Static GitHub Pages preview mode (no local SQLite server running)
+    });
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const selected = form.querySelector('input[name="size"]:checked');
     if (!selected || !sizes.includes(selected.value)) {
@@ -41,7 +53,27 @@
     bag.push(selected.value);
     renderBag();
     const itemWord = bag.length === 1 ? "item" : "items";
-    bagStatus.textContent = `Added a TENSILE Heavyweight Tee in size ${selected.value}. Your demo bag has ${bag.length} ${itemWord}.`;
+
+    try {
+      const response = await fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customerName: "Simulated Buyer (IS117 Demo)",
+          size: selected.value,
+          quantity: 1,
+        }),
+      });
+      if (response.ok) {
+        const { order } = await response.json();
+        bagStatus.textContent = `Simulated checkout saved to SQLite (Order #${order.id} · Size ${order.size} · $${order.total_usd} USD). Bag has ${bag.length} ${itemWord}.`;
+        return;
+      }
+    } catch {
+      // Fallback for static GitHub Pages preview
+    }
+
+    bagStatus.textContent = `Added a TENSILE Heavyweight Tee in size ${selected.value} ($42 USD simulated checkout). Your demo bag has ${bag.length} ${itemWord}.`;
   });
 
   form.addEventListener("change", () => {
